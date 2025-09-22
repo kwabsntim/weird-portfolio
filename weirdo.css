@@ -243,7 +243,7 @@ body {
 }
 
 .avatar-image {
-    width: 100%;
+    width: 90%;
     height: 100%;
     background: radial-gradient(circle, #444 30%, #222 70%);
     display: flex;
