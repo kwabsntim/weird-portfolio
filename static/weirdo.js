@@ -177,6 +177,10 @@ function createTweetElement(post) {
                     </div>
                 </div>
                 <div class="tweet-text">${post.text}</div>
+                <div class="comments-section">
+                    <button class="toggle-comments" onclick="toggleComments('bit-${post.id}', this)">💬 Comments</button>
+                    <div id="disqus-bit-${post.id}" class="disqus-container" style="display: none;"></div>
+                </div>
             </div>
         </div>
     `;
@@ -292,6 +296,10 @@ function createBlogElement(blog) {
                         </div>
                     </div>
                 ` : `<div class="tweet-text">${blog.content}</div>`}
+                <div class="comments-section">
+                    <button class="toggle-comments" onclick="toggleComments('blog-${blog.id}', this)">💬 Comments</button>
+                    <div id="disqus-blog-${blog.id}" class="disqus-container" style="display: none;"></div>
+                </div>
             </div>
         </div>
     `;
@@ -325,5 +333,43 @@ function toggleReadMore(element) {
         preview.style.display = 'inline';
         full.style.display = 'none';
         element.textContent = '... read more';
+    }
+}
+
+function toggleComments(identifier, button) {
+    const container = document.getElementById(`disqus-${identifier}`);
+    
+    if (container.style.display === 'none') {
+        container.style.display = 'block';
+        button.textContent = '💬 Hide Comments';
+        
+        if (!container.hasChildNodes()) {
+            const disqusDiv = document.createElement('div');
+            disqusDiv.id = `disqus_thread_${identifier}`;
+            container.appendChild(disqusDiv);
+            
+            if (window.DISQUS) {
+                window.DISQUS.reset({
+                    reload: true,
+                    config: function () {
+                        this.page.identifier = identifier;
+                        this.page.url = window.location.href + '#' + identifier;
+                    }
+                });
+            } else {
+                window.disqus_config = function () {
+                    this.page.url = window.location.href + '#' + identifier;
+                    this.page.identifier = identifier;
+                };
+                
+                const script = document.createElement('script');
+                script.src = 'https://YOUR-DISQUS-SHORTNAME.disqus.com/embed.js';
+                script.setAttribute('data-timestamp', +new Date());
+                document.head.appendChild(script);
+            }
+        }
+    } else {
+        container.style.display = 'none';
+        button.textContent = '💬 Comments';
     }
 }
