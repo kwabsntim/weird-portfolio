@@ -173,11 +173,9 @@ function createTweetElement(post) {
             <div class="tweet-avatar"></div>
             <div class="tweet-content">
                 <div class="tweet-header">
-                    <span class="tweet-author">${post.author}</span>
                     <span class="tweet-username">${post.username}</span>
-                    <span> · </span>
-                    <span class="tweet-date">${post.date}</span>
-                    <div class="tweet-actions">
+                    <div class="tweet-right">
+                        <span class="tweet-date">${post.date}</span>
                         <button class="delete-btn" onclick="event.stopPropagation(); deleteBit(${post.id})">×</button>
                     </div>
                 </div>

@@ -694,24 +694,24 @@ body {
 .tweet-header {
     display: flex;
     align-items: center;
-    gap: 4px;
-    margin-bottom: 2px;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    width: 100%;
 }
 
-.tweet-author {
-    font-weight: bold;
-    font-size: 15px;
+.tweet-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-@media (max-width: 480px) {
-    .tweet-author {
-        font-size: 14px;
-    }
-}
+
 
 .tweet-username {
-    color: var(--text-secondary);
+    color: var(--text-primary);
     font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 @media (max-width: 480px) {
@@ -722,21 +722,17 @@ body {
 
 .tweet-date {
     color: var(--text-secondary);
-    font-size: 15px;
+    font-size: 14px;
+    white-space: nowrap;
 }
 
 @media (max-width: 480px) {
     .tweet-date {
-        font-size: 14px;
+        font-size: 13px;
     }
 }
 
-.tweet-actions {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+
 
 .delete-btn {
     background: none;
