@@ -163,6 +163,11 @@ function displayFrames(frames) {
 function createTweetElement(post) {
     const div = document.createElement('div');
     div.className = 'tweet-container';
+    div.onclick = (e) => {
+        if (!e.target.classList.contains('delete-btn')) {
+            toggleCardComments(div, `bit-${post.id}`);
+        }
+    };
     div.innerHTML = `
         <div class="tweet">
             <div class="tweet-avatar"></div>
@@ -173,12 +178,11 @@ function createTweetElement(post) {
                     <span> · </span>
                     <span class="tweet-date">${post.date}</span>
                     <div class="tweet-actions">
-                        <button class="delete-btn" onclick="deleteBit(${post.id})">×</button>
+                        <button class="delete-btn" onclick="event.stopPropagation(); deleteBit(${post.id})">×</button>
                     </div>
                 </div>
                 <div class="tweet-text">${post.text}</div>
                 <div class="comments-section">
-                    <button class="toggle-comments" onclick="toggleComments('bit-${post.id}', this)">💬 Comments</button>
                     <div id="disqus-bit-${post.id}" class="disqus-container" style="display: none;"></div>
                 </div>
             </div>
@@ -336,12 +340,16 @@ function toggleReadMore(element) {
     }
 }
 
-function toggleComments(identifier, button) {
+function toggleCardComments(cardElement, identifier) {
+    const commentsSection = cardElement.querySelector('.comments-section');
     const container = document.getElementById(`disqus-${identifier}`);
     
-    if (container.style.display === 'none') {
+    if (commentsSection.classList.contains('active')) {
+        commentsSection.classList.remove('active');
+        container.style.display = 'none';
+    } else {
+        commentsSection.classList.add('active');
         container.style.display = 'block';
-        button.textContent = '💬 Hide Comments';
         
         if (!container.hasChildNodes()) {
             const disqusDiv = document.createElement('div');
@@ -368,8 +376,5 @@ function toggleComments(identifier, button) {
                 document.head.appendChild(script);
             }
         }
-    } else {
-        container.style.display = 'none';
-        button.textContent = '💬 Comments';
     }
 }
