@@ -100,7 +100,7 @@ function switchTab(tabName, element) {
 // API functions
 async function fetchBits() {
     try {
-        const response = await fetch('http://localhost:5000/api/bits');
+        const response = await fetch('https://kwabsntim1.pythonanywhere.com/api/bits');
         const data = await response.json();
         displayBits(data.bits, data.pinned);
     } catch (error) {
@@ -110,7 +110,7 @@ async function fetchBits() {
 
 async function fetchFrames() {
     try {
-        const response = await fetch('http://localhost:5000/api/frames');
+        const response = await fetch('https://kwabsntim1.pythonanywhere.com/api/frames');
         const data = await response.json();
         displayFrames(data.frames);
     } catch (error) {
@@ -214,7 +214,7 @@ function createFrameElement(frame) {
 async function deleteBit(bitId) {
     if (confirm('Are you sure you want to delete this bit?')) {
         try {
-            const response = await fetch(`http://localhost:5000/api/bits/${bitId}`, {
+            const response = await fetch(`https://kwabsntim1.pythonanywhere.com/api/bits/${bitId}`, {
                 method: 'DELETE'
             });
             const result = await response.json();
@@ -230,12 +230,12 @@ async function deleteBit(bitId) {
 // Fetch and display profile picture
 async function fetchProfile() {
     try {
-        const response = await fetch('http://localhost:5000/api/profile');
+        const response = await fetch('https://kwabsntim1.pythonanywhere.com/api/profile');
         const data = await response.json();
         if (data.profile.avatar_url) {
             const avatarElement = document.querySelector('.avatar-image');
             const imageUrl = data.profile.avatar_url.startsWith('/uploads/') 
-                ? `http://localhost:5000${data.profile.avatar_url}` 
+                ? `https://kwabsntim1.pythonanywhere.com${data.profile.avatar_url}` 
                 : data.profile.avatar_url;
             avatarElement.innerHTML = `<img src="${imageUrl}" alt="Profile" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">`;
         }
@@ -246,7 +246,7 @@ async function fetchProfile() {
 
 async function fetchBlogs() {
     try {
-        const response = await fetch('http://localhost:5000/api/blogs');
+        const response = await fetch('https://kwabsntim1.pythonanywhere.com/api/blogs');
         const data = await response.json();
         displayBlogs(data.blogs);
     } catch (error) {
