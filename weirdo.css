@@ -661,16 +661,34 @@ body {
     flex-shrink: 0;
 }
 
+@media (max-width: 768px) {
+    .tweet {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .tweet-avatar {
+        display: none;
+    }
+}
+
 @media (max-width: 480px) {
     .tweet-avatar {
         width: 36px;
         height: 36px;
+        display: none;
     }
 }
 
 .tweet-content {
     flex: 1;
     min-width: 0;
+}
+
+@media (max-width: 768px) {
+    .tweet-content {
+        width: 100%;
+    }
 }
 
 .tweet-header {
@@ -761,9 +779,19 @@ body {
     word-break: break-word;
 }
 
+@media (max-width: 768px) {
+    .tweet-text {
+        font-size: 16px;
+        line-height: 1.4;
+        width: 100%;
+    }
+}
+
 @media (max-width: 480px) {
     .tweet-text {
-        font-size: 14px;
+        font-size: 15px;
+        line-height: 1.4;
+        width: 100%;
     }
 }
 
