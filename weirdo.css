@@ -663,20 +663,22 @@ body {
 
 @media (max-width: 768px) {
     .tweet {
-        flex-direction: column;
-        gap: 8px;
+        flex-direction: row;
+        gap: 12px;
     }
     
     .tweet-avatar {
-        display: none;
+        width: 32px;
+        height: 32px;
+        display: block;
     }
 }
 
 @media (max-width: 480px) {
     .tweet-avatar {
-        width: 36px;
-        height: 36px;
-        display: none;
+        width: 28px;
+        height: 28px;
+        display: block;
     }
 }
 
