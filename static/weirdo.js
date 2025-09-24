@@ -170,7 +170,9 @@ function createTweetElement(post) {
     };
     div.innerHTML = `
         <div class="tweet">
-            <div class="tweet-avatar"></div>
+            <div class="tweet-avatar">
+                <img src="static/profile.jpeg" alt="Profile">
+            </div>
             <div class="tweet-content">
                 <div class="tweet-header">
                     <span class="tweet-username">${post.username}</span>
@@ -194,13 +196,15 @@ function createFrameElement(frame) {
     div.className = 'tweet-container';
     div.innerHTML = `
         <div class="tweet">
-            <div class="tweet-avatar"></div>
+            <div class="tweet-avatar">
+                <img src="static/profile.jpeg" alt="Profile">
+            </div>
             <div class="tweet-content">
                 <div class="tweet-header">
-                    <span class="tweet-author">${frame.author}</span>
                     <span class="tweet-username">${frame.username}</span>
-                    <span> · </span>
-                    <span class="tweet-date">${frame.date}</span>
+                    <div class="tweet-right">
+                        <span class="tweet-date">${frame.date}</span>
+                    </div>
                 </div>
                 <div class="tweet-text">${frame.caption}</div>
                 ${frame.image_url && frame.image_url !== 'placeholder' ? `<div class="image-placeholder">📷 ${frame.caption}</div>` : ''}
@@ -276,13 +280,15 @@ function createBlogElement(blog) {
     
     div.innerHTML = `
         <div class="tweet">
-            <div class="tweet-avatar"></div>
+            <div class="tweet-avatar">
+                <img src="static/profile.jpeg" alt="Profile">
+            </div>
             <div class="tweet-content">
                 <div class="tweet-header">
-                    <span class="tweet-author">${blog.author}</span>
                     <span class="tweet-username">${blog.username}</span>
-                    <span> · </span>
-                    <span class="tweet-date">${blog.date}</span>
+                    <div class="tweet-right">
+                        <span class="tweet-date">${blog.date}</span>
+                    </div>
                 </div>
                 ${blog.image_url ? `
                     <div class="blog-content">
