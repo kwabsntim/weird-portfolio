@@ -608,6 +608,37 @@ body {
     }
 }
 
+/* Welcome Message */
+.welcome-message {
+    padding: 20px;
+    font-size: 18px;
+    color: var(--text-primary);
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+.wave-emoji {
+    font-size: 24px;
+    animation: wave 2s ease-in-out infinite;
+}
+
+@keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(20deg); }
+    75% { transform: rotate(-10deg); }
+}
+
+@media (max-width: 480px) {
+    .welcome-message {
+        font-size: 16px;
+        padding: 16px;
+    }
+    .wave-emoji {
+        font-size: 20px;
+    }
+}
+
 /* Tweet Section */
 .tweets-section {
     width: 100%;
