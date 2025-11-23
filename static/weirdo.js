@@ -121,8 +121,12 @@ async function fetchFrames() {
 function displayBits(bits, pinnedBit) {
     const container = document.querySelector('#posts-content .tweets-section');
     
-    // Clear all content
+    // Preserve welcome message and clear only dynamic content
+    const welcomeMessage = container.querySelector('.welcome-message');
     container.innerHTML = '';
+    if (welcomeMessage) {
+        container.appendChild(welcomeMessage);
+    }
     
     // Add pinned bit if exists
     if (pinnedBit) {
