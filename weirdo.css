@@ -633,6 +633,13 @@ body {
     padding: 0 20px;
 }
 
+.intro-separator {
+    border: none;
+    height: 1px;
+    background: var(--border-color);
+    margin: 16px 20px 0 20px;
+}
+
 .intro-divider {
     border: none;
     height: 1px;
