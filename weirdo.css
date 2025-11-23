@@ -678,10 +678,10 @@ body {
     }
     .intro-text {
         font-size: 13px;
-        padding: 0 8px;
+        padding: 0 10px;
     }
     .intro-separator {
-        margin: 16px 8px 0 8px;
+        margin: 16px 10px 0 10px;
     }
 }
 
