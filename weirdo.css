@@ -624,6 +624,22 @@ body {
     margin-top: 8px;
 }
 
+.intro-text {
+    font-size: 14px;
+    color: var(--text-primary);
+    margin-top: 16px;
+    text-align: left;
+    line-height: 1.5;
+    padding: 0 20px;
+}
+
+.intro-divider {
+    border: none;
+    height: 1px;
+    background: var(--border-color);
+    margin: 20px 0;
+}
+
 .wave-emoji {
     font-size: 24px;
     animation: wave 1.5s ease-in-out infinite;
@@ -652,6 +668,10 @@ body {
     }
     .subtitle {
         font-size: 10px;
+    }
+    .intro-text {
+        font-size: 13px;
+        padding: 0 16px;
     }
 }
 
