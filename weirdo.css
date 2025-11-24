@@ -660,6 +660,13 @@ body {
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
 }
 
+.section-separator {
+    border: none;
+    height: 1px;
+    background: var(--border-color);
+    margin: 16px 20px;
+}
+
 .intro-divider {
     border: none;
     height: 1px;
