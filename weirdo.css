@@ -678,7 +678,8 @@ body {
     }
     .intro-text {
         font-size: 13px;
-        padding: 0 10px;
+        margin: 16px -15px 0 -15px;
+        padding: 0 5px;
     }
     .intro-separator {
         margin: 16px 10px 0 10px;
