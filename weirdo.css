@@ -627,10 +627,9 @@ body {
 .intro-text {
     font-size: 14px;
     color: var(--text-primary);
-    margin-top: 16px;
+    margin: 16px -20px 0 -20px;
     text-align: justify;
     line-height: 1.5;
-    margin: 16px -20px 0 -20px;
     padding: 0 20px;
 }
 
