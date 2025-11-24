@@ -667,6 +667,33 @@ body {
     margin: 20px 0;
 }
 
+.tech-stack {
+    font-size: 14px;
+    color: var(--text-primary);
+    margin: 0 -20px;
+    text-align: left;
+    line-height: 1.5;
+    padding: 0 20px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.tech-badge {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+}
+
 .intro-divider {
     border: none;
     height: 1px;
@@ -715,6 +742,15 @@ body {
         font-size: 13px;
         margin: 0 -19px;
         padding: 0 1px;
+    }
+    .tech-stack {
+        font-size: 13px;
+        margin: 0 -19px;
+        padding: 0 1px;
+    }
+    .tech-badge {
+        font-size: 11px;
+        padding: 3px 6px;
     }
 }
 
