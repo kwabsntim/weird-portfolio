@@ -30,13 +30,7 @@
 }
 
 [data-theme="light"] body {
-    background-color: #ffffff;
-}
-
-@media (min-width: 768px) {
-    [data-theme="light"] body {
-        background-color: #ffffff;
-    }
+    background-color: #ffffff !important;
 }
 
 body {
