@@ -685,14 +685,28 @@ body {
 }
 
 .tech-badge {
-    background: var(--bg-tertiary);
-    color: var(--text-primary);
     padding: 4px 8px;
     border-radius: 6px;
     font-size: 12px;
     font-weight: 500;
-    border: 1px solid var(--border-color);
+    color: white;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
 }
+
+.tech-badge.python { background: #3776ab; }
+.tech-badge.docker { background: #2496ed; }
+.tech-badge.golang { background: #00add8; }
+.tech-badge.css { background: #1572b6; }
+.tech-badge.html { background: #e34f26; }
+.tech-badge.linux { background: #fcc624; color: #000; }
+.tech-badge.flask { background: #000000; }
+.tech-badge.django { background: #092e20; }
+.tech-badge.vscode { background: #007acc; }
+.tech-badge.rabbitmq { background: #ff6600; }
+.tech-badge.mongodb { background: #47a248; }
 
 .intro-divider {
     border: none;
