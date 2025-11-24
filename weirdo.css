@@ -29,7 +29,9 @@
     --border-color: #eff3f4;
 }
 
-[data-theme="light"] body {
+body[data-theme="light"],
+[data-theme="light"] body,
+html[data-theme="light"] body {
     background-color: #ffffff !important;
 }
 
@@ -648,6 +650,16 @@ body {
     margin: 16px 20px 0 20px;
 }
 
+.activities-list {
+    font-size: 14px;
+    color: var(--text-primary);
+    margin: 0 -20px;
+    text-align: left;
+    line-height: 1.5;
+    padding: 0 20px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
 .intro-divider {
     border: none;
     height: 1px;
@@ -691,6 +703,11 @@ body {
     }
     .intro-separator {
         margin: 16px 10px 0 10px;
+    }
+    .activities-list {
+        font-size: 13px;
+        margin: 0 -19px;
+        padding: 0 1px;
     }
 }
 
