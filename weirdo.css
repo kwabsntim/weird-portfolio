@@ -26,7 +26,7 @@
     --bg-tertiary: #eff3f4;
     --text-primary: #0f1419;
     --text-secondary: #536471;
-    --border-color: #eff3f4;
+    --border-color: #ccd6dd;
 }
 
 body[data-theme="light"],
@@ -664,7 +664,7 @@ body {
     border: none;
     height: 1px;
     background: var(--border-color);
-    margin: 16px 20px;
+    margin: 20px 0;
 }
 
 .intro-divider {
