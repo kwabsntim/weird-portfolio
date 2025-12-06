@@ -1222,7 +1222,7 @@ body {
 .card-container {
     position: relative;
     height: 250px;
-    border-radius: 12px;
+    border-radius: 20px;
     overflow: visible;
     border: 2px solid rgba(255, 255, 255, 0.3);
     background-size: cover;
@@ -1275,7 +1275,7 @@ body {
     justify-content: space-between;
     position: relative;
     z-index: 2;
-    border-radius: 12px;
+    border-radius: 20px;
     overflow: hidden;
 }
 
