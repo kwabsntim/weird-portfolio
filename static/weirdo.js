@@ -362,8 +362,62 @@ function createBlogElement(blog) {
     return div;
 }
 
+// Card Carousel functionality
+function initCardCarousel() {
+    const cards = document.querySelectorAll('.card-container');
+    
+    cards.forEach((card, cardIndex) => {
+        const cardNum = cardIndex + 1;
+        const pages = card.querySelectorAll('.card-page');
+        const dotsContainer = card.querySelector(`.card-dots[data-card="${cardNum}"]`);
+        const prevBtn = card.querySelector(`.card-nav-btn.prev[data-card="${cardNum}"]`);
+        const nextBtn = card.querySelector(`.card-nav-btn.next[data-card="${cardNum}"]`);
+        
+        let currentPage = 0;
+        
+        // Create dots
+        pages.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.className = 'card-dot';
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToPage(index));
+            dotsContainer.appendChild(dot);
+        });
+        
+        const dots = dotsContainer.querySelectorAll('.card-dot');
+        
+        function goToPage(pageIndex) {
+            pages[currentPage].classList.remove('active');
+            dots[currentPage].classList.remove('active');
+            
+            currentPage = pageIndex;
+            
+            pages[currentPage].classList.add('active');
+            dots[currentPage].classList.add('active');
+            
+            updateButtons();
+        }
+        
+        function updateButtons() {
+            prevBtn.disabled = currentPage === 0;
+            nextBtn.disabled = currentPage === pages.length - 1;
+        }
+        
+        prevBtn.addEventListener('click', () => {
+            if (currentPage > 0) goToPage(currentPage - 1);
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            if (currentPage < pages.length - 1) goToPage(currentPage + 1);
+        });
+        
+        updateButtons();
+    });
+}
+
 // Load profile when page loads
 document.addEventListener('DOMContentLoaded', function() {
+    initCardCarousel();
     fetchBits();
     fetchFrames();
     fetchBlogs();
