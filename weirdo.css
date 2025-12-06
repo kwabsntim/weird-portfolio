@@ -347,7 +347,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 4px;
+    gap: 0;
     margin-bottom: 0;
 }
 
@@ -355,6 +355,7 @@ body {
     display: flex;
     gap: 8px;
     margin-left: auto;
+    flex-shrink: 0;
 }
 
 .social-icon {
@@ -376,6 +377,10 @@ body {
     font-size: 25px;
     font-weight: 900;
     color: var(--text-primary);
+    flex-shrink: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 @media (max-width: 480px) {
@@ -664,7 +669,7 @@ body {
     border: none;
     height: 1px;
     background: var(--border-color);
-    margin: 20px 0;
+    margin: 20px -20px;
 }
 
 .tech-stack {
@@ -681,6 +686,7 @@ body {
     font-size: 12px;
     color: var(--text-secondary);
     margin-top: 8px;
+    text-decoration: underline;
 }
 
 .tech-badges {
@@ -1125,7 +1131,7 @@ body {
     }
 }
 
-/* Scroll Buttons */
+/* Scroll Button */
 .scroll-btn {
     position: fixed;
     bottom: 20px;
@@ -1141,16 +1147,12 @@ body {
     justify-content: center;
     box-shadow: 0 4px 12px rgba(29, 155, 240, 0.4);
     transition: all 0.3s;
-    z-index: 1000;
+    z-index: 9999;
 }
 
 .scroll-btn:hover {
     background: #1a8cd8;
     transform: scale(1.1);
-}
-
-#scroll-down {
-    bottom: 80px;
 }
 
 .scroll-btn.show {
@@ -1162,9 +1164,5 @@ body {
         width: 45px;
         height: 45px;
         right: 15px;
-    }
-    
-    #scroll-down {
-        bottom: 70px;
     }
 }

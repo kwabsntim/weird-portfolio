@@ -163,14 +163,9 @@
    
     </div>
     
-    <!-- Scroll Buttons -->
-    <button id="scroll-up" class="scroll-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="white">
-            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
-        </svg>
-    </button>
-    <button id="scroll-down" class="scroll-btn" onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="white">
+    <!-- Scroll Button -->
+    <button id="scroll-btn" class="scroll-btn" onclick="handleScroll()">
+        <svg id="scroll-icon" viewBox="0 0 24 24" width="20" height="20" fill="white">
             <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
         </svg>
     </button>

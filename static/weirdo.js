@@ -326,27 +326,46 @@ document.addEventListener('DOMContentLoaded', function() {
     fetchProfile();
     
     // Scroll button logic
-    const scrollUpBtn = document.getElementById('scroll-up');
-    const scrollDownBtn = document.getElementById('scroll-down');
+    const scrollBtn = document.getElementById('scroll-btn');
+    const scrollIcon = document.getElementById('scroll-icon');
+    let lastScrollTop = 0;
     
     window.addEventListener('scroll', () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight;
         const clientHeight = document.documentElement.clientHeight;
         
-        if (scrollTop > 300) {
-            scrollUpBtn.classList.add('show');
+        if (scrollTop > 300 && scrollTop + clientHeight < scrollHeight - 100) {
+            scrollBtn.classList.add('show');
+            
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down - show up arrow
+                scrollIcon.querySelector('path').setAttribute('d', 'M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z');
+            } else {
+                // Scrolling up - show down arrow
+                scrollIcon.querySelector('path').setAttribute('d', 'M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z');
+            }
+            lastScrollTop = scrollTop;
         } else {
-            scrollUpBtn.classList.remove('show');
-        }
-        
-        if (scrollTop + clientHeight < scrollHeight - 300) {
-            scrollDownBtn.classList.add('show');
-        } else {
-            scrollDownBtn.classList.remove('show');
+            scrollBtn.classList.remove('show');
         }
     });
 });
+
+function handleScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight;
+    const clientHeight = document.documentElement.clientHeight;
+    const iconPath = document.querySelector('#scroll-icon path').getAttribute('d');
+    
+    if (iconPath.includes('15.41')) {
+        // Up arrow is showing, scroll to top
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    } else {
+        // Down arrow is showing, scroll to bottom
+        window.scrollTo({top: scrollHeight, behavior: 'smooth'});
+    }
+}
 
 
 function toggleReadMore(element) {
