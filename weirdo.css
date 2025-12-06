@@ -1214,6 +1214,13 @@ body {
     padding: 0 20px;
 }
 
+@media (max-width: 480px) {
+    .cards-grid {
+        margin: 20px -19px 0 -19px;
+        padding: 0 1px;
+    }
+}
+
 @media (min-width: 769px) {
     .cards-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1285,7 +1292,7 @@ body {
     font-size: 14px;
     line-height: 1.5;
     color: var(--text-primary);
-    text-align: left;
+    text-align: justify;
 }
 
 .card-footer {
