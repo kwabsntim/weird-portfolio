@@ -248,6 +248,16 @@ body {
     margin-right: 20px;
 }
 
+.profile-avatar.flip {
+    animation: flipAvatar 0.4s ease-in-out;
+}
+
+@keyframes flipAvatar {
+    0% { transform: rotateY(0deg); }
+    50% { transform: rotateY(90deg); }
+    100% { transform: rotateY(0deg); }
+}
+
 @media (max-width: 480px) {
     .profile-avatar {
         width: 100px;
