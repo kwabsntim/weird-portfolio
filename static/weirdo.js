@@ -1,3 +1,28 @@
+// Typing animation for terminal welcome message
+(function() {
+    const typingLine = document.getElementById('typing-line');
+    const text = 'Welcome to <span style="color:var(--term-accent)">weird-terminal</span>. Type <b>whoami</b> or <b>whyareyouhere</b>.';
+    let index = 0;
+    let currentText = '';
+    
+    function type() {
+        if (index < text.length) {
+            if (text[index] === '<') {
+                const closeTag = text.indexOf('>', index);
+                currentText += text.substring(index, closeTag + 1);
+                index = closeTag + 1;
+            } else {
+                currentText += text[index];
+                index++;
+            }
+            typingLine.innerHTML = currentText;
+            setTimeout(type, 50);
+        }
+    }
+    
+    type();
+})();
+
 function toggleTheme() {
     const body = document.body;
     const themeIcon = document.getElementById('theme-path');
