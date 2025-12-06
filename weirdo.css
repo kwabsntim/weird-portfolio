@@ -205,6 +205,10 @@ body {
     margin: 0 -13px;
 }
 
+.header-banner img {
+    transition: opacity 0.6s ease-in-out;
+}
+
 @media (max-width: 767px) {
     .header-banner {
         width: calc(100% + 26px);
