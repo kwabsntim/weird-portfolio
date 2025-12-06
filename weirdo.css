@@ -275,7 +275,7 @@ body {
     justify-content: center;
     font-size: 48px;
     color: #888;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 @media (max-width: 480px) {
