@@ -417,8 +417,13 @@ function initCardCarousel() {
         }
         
         function updateButtons() {
-            prevBtn.disabled = currentPage === 0;
-            nextBtn.disabled = currentPage === pages.length - 1;
+            if (currentPage === 0) {
+                prevBtn.classList.remove('show');
+                nextBtn.classList.add('show');
+            } else {
+                prevBtn.classList.add('show');
+                nextBtn.classList.remove('show');
+            }
         }
         
         prevBtn.addEventListener('click', () => {

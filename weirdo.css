@@ -1349,8 +1349,8 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: calc(100% + 80px);
-    left: -40px;
+    width: 100%;
+    left: 0;
     display: flex;
     justify-content: space-between;
     pointer-events: none;
@@ -1367,7 +1367,7 @@ body {
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     pointer-events: auto;
@@ -1375,13 +1375,19 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
+.card-nav-btn.show {
+    display: flex;
+}
+
+.card-nav-btn.prev {
+    margin-left: -18px;
+}
+
+.card-nav-btn.next {
+    margin-right: -18px;
+}
+
 .card-nav-btn:hover {
     background: white;
     transform: scale(1.1);
-}
-
-.card-nav-btn:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-    transform: scale(1);
 }
