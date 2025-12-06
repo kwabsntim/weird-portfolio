@@ -1,7 +1,7 @@
 // Typing animation for terminal welcome message
 (function() {
     const typingLine = document.getElementById('typing-line');
-    const text = 'Welcome to <span style="color:var(--term-accent)">weird-terminal</span>. Type <b>whoami</b> or <b>whyareyouhere</b>.';
+    const text = 'Welcome to <span style="color:var(--term-accent)">weird-terminal</span>. Type <b>whoami</b> or <b>whyhere</b>.';
     let index = 0;
     let currentText = '';
     
@@ -80,7 +80,7 @@ function switchTab(tabName, element) {
       whoami() {
         return "Programmer . Engineer . Music Lover . occasional chaos architect.";
       },
-      whyareyouhere() {
+      whyhere() {
         return "To see the other version of he you see...but curiosity kills.";
       }
     };
