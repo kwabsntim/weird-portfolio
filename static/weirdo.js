@@ -362,6 +362,24 @@ function createBlogElement(blog) {
     return div;
 }
 
+// Card scroll animation
+function initCardAnimations() {
+    const cards = document.querySelectorAll('.card-container');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    cards.forEach(card => observer.observe(card));
+}
+
 // Card Carousel functionality
 function initCardCarousel() {
     const cards = document.querySelectorAll('.card-container');
@@ -417,6 +435,7 @@ function initCardCarousel() {
 
 // Load profile when page loads
 document.addEventListener('DOMContentLoaded', function() {
+    initCardAnimations();
     initCardCarousel();
     fetchBits();
     fetchFrames();

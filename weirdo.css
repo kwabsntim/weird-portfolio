@@ -1223,14 +1223,36 @@ body {
     position: relative;
     height: 250px;
     border-radius: 12px;
-    overflow: hidden;
+    overflow: visible;
     border: 2px solid rgba(255, 255, 255, 0.3);
     background-size: cover;
     background-position: center;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.card-container.animate-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 [data-theme="light"] .card-container {
     border-color: rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .card-container:nth-child(odd) {
+        transform: translateX(-50px);
+    }
+    
+    .card-container:nth-child(even) {
+        transform: translateX(50px);
+    }
+    
+    .card-container.animate-in {
+        transform: translateX(0);
+    }
 }
 
 .card-container::before {
@@ -1253,6 +1275,8 @@ body {
     justify-content: space-between;
     position: relative;
     z-index: 2;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .card-pages {
@@ -1325,12 +1349,12 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: calc(100% + 60px);
-    left: -30px;
+    width: calc(100% + 80px);
+    left: -40px;
     display: flex;
     justify-content: space-between;
     pointer-events: none;
-    z-index: 3;
+    z-index: 10;
 }
 
 .card-nav-btn {
