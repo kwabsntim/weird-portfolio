@@ -31,6 +31,8 @@ function toggleTheme() {
     const profileImg = document.querySelector('.profile-avatar img');
     
     bannerImg.style.opacity = '0';
+    profileAvatar.classList.remove('flip');
+    void profileAvatar.offsetWidth;
     profileAvatar.classList.add('flip');
     
     setTimeout(() => {
@@ -48,11 +50,11 @@ function toggleTheme() {
             profileImg.src = 'static/lightchristmas.png';
         }
         bannerImg.style.opacity = '1';
-    }, 200);
+    }, 150);
     
     setTimeout(() => {
         profileAvatar.classList.remove('flip');
-    }, 400);
+    }, 300);
 }
 
 function switchTab(tabName, element) {

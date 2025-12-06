@@ -249,7 +249,7 @@ body {
 }
 
 .profile-avatar.flip {
-    animation: flipAvatar 0.4s ease-in-out;
+    animation: flipAvatar 0.3s ease-in-out;
 }
 
 @keyframes flipAvatar {
@@ -275,7 +275,7 @@ body {
     justify-content: center;
     font-size: 48px;
     color: #888;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 @media (max-width: 480px) {
