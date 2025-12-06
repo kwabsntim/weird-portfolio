@@ -1124,3 +1124,47 @@ body {
         margin-top: 12px;
     }
 }
+
+/* Scroll Buttons */
+.scroll-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #1d9bf0;
+    border: none;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(29, 155, 240, 0.4);
+    transition: all 0.3s;
+    z-index: 1000;
+}
+
+.scroll-btn:hover {
+    background: #1a8cd8;
+    transform: scale(1.1);
+}
+
+#scroll-down {
+    bottom: 80px;
+}
+
+.scroll-btn.show {
+    display: flex;
+}
+
+@media (max-width: 480px) {
+    .scroll-btn {
+        width: 45px;
+        height: 45px;
+        right: 15px;
+    }
+    
+    #scroll-down {
+        bottom: 70px;
+    }
+}

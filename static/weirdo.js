@@ -324,15 +324,31 @@ document.addEventListener('DOMContentLoaded', function() {
     fetchFrames();
     fetchBlogs();
     fetchProfile();
+    
+    // Scroll button logic
+    const scrollUpBtn = document.getElementById('scroll-up');
+    const scrollDownBtn = document.getElementById('scroll-down');
+    
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
+        
+        if (scrollTop > 300) {
+            scrollUpBtn.classList.add('show');
+        } else {
+            scrollUpBtn.classList.remove('show');
+        }
+        
+        if (scrollTop + clientHeight < scrollHeight - 300) {
+            scrollDownBtn.classList.add('show');
+        } else {
+            scrollDownBtn.classList.remove('show');
+        }
+    });
 });
 
-// Refresh posts every 30 seconds
-setInterval(() => {
-    fetchBits();
-    fetchFrames();
-    fetchBlogs();
-    fetchProfile();
-}, 30000);
+
 function toggleReadMore(element) {
     const preview = element.parentElement.querySelector('.blog-preview');
     const full = element.parentElement.querySelector('.blog-full');
