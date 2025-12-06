@@ -700,6 +700,8 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 4px;
+    vertical-align: middle;
+    margin-left: 4px;
 }
 
 .tech-badge.python { background: #3776ab; }
